@@ -1,0 +1,21 @@
+.border-separator {
+  border-bottom: 1px solid #b2dfdb;
+}
+
+.table-header {
+  font-size: 14px;
+}
+
+.header-style {
+  font-size: 32px;
+}
+
+.summary-style {
+  background-color: #e0f2f1;
+  font-size: 16px;
+  max-height: 600px;
+}
+
+.submit-button {
+  background-color: #1a237e;;
+}

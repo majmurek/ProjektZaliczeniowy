@@ -1,0 +1,11 @@
+<div class="card shadow mt-2" style="width: 13rem;">
+  <img style="height: 120px" [src]="item.image" class="card-img-top" alt="...">
+  <div class="card-body">
+    <h6 style="color: #1a237e" class="card-title text-center">{{item.title}}</h6>
+    <p class="card-text text-center description" [title]="item.description">{{item.description}}</p>
+    <div class="d-flex flex-row justify-content-around">
+      <div class="align-self-center card-text">{{item.price}}zł</div>
+      <button style="color: #3f51b5" type="button" (click)=addItemToBasket() class="btn btn-link">Dodaj</button>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,9 @@
+@import "~leaflet/dist/leaflet.css";
+
+.map-frame {
+  height: 300px;
+}
+
+#map {
+  height: 300px;
+}

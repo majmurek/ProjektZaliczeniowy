@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Sign up</title>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet"
+          id="bootstrap-css">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.0.0/css/font-awesome.min.css">
+</head>
+<style>
+    .search {
+        background-image: radial-gradient(#b2dfdb 20%, transparent 20%);
+        background-position: 0 0;
+        background-size: 9px 9px;
+        height: 420px;
+        width: 100%;
+    }
+</style>
+<body>
+<div class="container search mt-5">
+    <form class="form-horizontal" role="form" method="POST" th:action="@{/signup}" th:object="${user}">
+        <div class="row">
+            <div class="col-md-3"></div>
+            <div class="col-md-6">
+                <div class="alert alert-success" role="alert" th:if="${msg}" th:utext="${msg}">
+                </div>
+            </div>
+        </div>
+        <div class="row justify-content-center">
+            <div class="col-md-6 mt-3 text-center">
+                <h2>Zarejestruj nowego użytkownika</h2>
+                <hr>
+            </div>
+        </div>
+        <div class="row justify-content-center">
+            <div class="col-md-6">
+                <div class="form-group">
+                    <div class="input-group mb-2 mr-sm-2 mb-sm-0">
+                        <div class="input-group-addon" style="width: 2.6rem"><i class="fa fa-user"></i></div>
+                        <input type="text" th:field="*{firstname}" class="form-control" id="firstname"
+                               placeholder="Imię" autofocus required>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row justify-content-center">
+            <div class="col-md-6">
+                <div class="form-group">
+                    <div class="input-group mb-2 mr-sm-2 mb-sm-0">
+                        <div class="input-group-addon" style="width: 2.6rem"><i class="fa fa-user"></i></div>
+                        <input type="text" th:field="*{lastname}" class="form-control" id="lastname"
+                               placeholder="Nazwisko" autofocus required>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row justify-content-center">
+            <div class="col-md-6">
+                <div class="form-group">
+                    <div class="input-group mb-2 mr-sm-2 mb-sm-0">
+                        <div class="input-group-addon" style="width: 2.6rem"><i class="fa fa-at"></i></div>
+                        <input type="text" th:field="*{email}" class="form-control" id="email"
+                               placeholder="username@jackrutorial.com" autofocus required>
+                    </div>
+                </div>
+            </div>
+            <div class="form-control-feedback" th:if="${#fields.hasErrors('email')}">
+                         <span class="text-danger align-middle" th:if="${#fields.hasErrors('email')}"
+                               th:errors="*{email}">
+                         </span>
+            </div>
+        </div>
+        <div class="row justify-content-center">
+            <div class="col-md-6">
+                <div class="form-group has-danger">
+                    <div class="input-group mb-2 mr-sm-2 mb-sm-0">
+                        <div class="input-group-addon" style="width: 2.6rem"><i class="fa fa-key"></i></div>
+                        <input type="password" th:field="*{password}" class="form-control" id="password"
+                               placeholder="Hasło" required>
+                    </div>
+                </div>
+            </div>
+            <div class="form-control-feedback" th:if="${#fields.hasErrors('password')}">
+                         <span class="text-danger align-middle" th:if="${#fields.hasErrors('password')}"
+                               th:errors="*{password}">
+                         </span>
+            </div>
+        </div>
+        <div class="row justify-content-center">
+            <div class="col-md-6">
+                <div class="my-4 text-center"> Przejdź do strony logowania. <a th:href="@{/login}">Zaloguj
+                    się!</a></div>
+                <button type="submit" class="btn btn-success w-100 ml-4"><i class="fa fa-user-plus"></i> Rejestracja</button>
+
+            </div>
+        </div>
+    </form>
+</div>
+</body>
+</html>

@@ -1,0 +1,10 @@
+<div class="row">
+  <div *ngIf="showAlert" class="alert alert-success add-to-basket-alert" role="alert">
+    Element został dodany do koszyka
+  </div>
+  <button type="button" class="btn btn-link" (click)="goToLogin()">Zaloguj</button>
+  <div>
+    <button [routerLink]='["basket"]' type="button" class="btn btn-link" (click)="goToBasket()">Sklep</button>
+    <button type="button" class="btn btn-pill p-0 font-weight-bold">{{countItemInBasket}}</button>
+  </div>
+</div>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Sign in</title>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet"
+          id="bootstrap-css">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.0.0/css/font-awesome.min.css">
+</head>
+<style>
+    .search {
+        background-image: radial-gradient(#b2dfdb 20%, transparent 20%);
+        background-position: 0 0;
+        background-size: 9px 9px;
+        height: 400px;
+        width: 100%;
+    }
+</style>
+<body>
+<div class="container search mt-5">
+    <div class="row justify-content-center">
+        <div class="alert alert-danger col-6" role="alert" th:if="${param.error}">
+            Ten Email jest niepoprawny!
+        </div>
+    </div>
+    <form class="row justify-content-center" th:action="@{/login}" method="post">
+        <div class="col-6">
+            <h1 class="h3 my-3 font-weight-normal text-center">Zaloguj się</h1>
+            <label for="email" class="sr-only">Email</label>
+            <input type="email" id="email" name="email" class="form-control my-3" placeholder="Email" required autofocus>
+            <label for="password" class="sr-only">Hasło</label>
+            <input type="password" id="password" name="password" class="form-control" placeholder="Hasło" required>
+            <div class="checkbox my-3">
+                <label>
+                    <input type="checkbox" name="remember-me"/> Pamiętaj mnie
+                </label>
+            </div>
+            <button class="btn btn-lg btn-success btn-block" type="submit">Zaloguj się</button>
+            <div class="margin-top20 text-center my-4"> Nie masz konta? <a th:href="@{/signup}">Stwórz konto</a></div>
+        </div>
+    </form>
+</div>
+</body>
+</html>

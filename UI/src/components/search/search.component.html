@@ -1,0 +1,41 @@
+<div class="search">
+  <div class="search-shift search-container input-group pt-4">
+    <input
+      #searchInput
+      type="text"
+      class="border-radius form-control"
+      placeholder="Wyszukaj produkt"
+      aria-label="Wyszukaj produkt"
+      aria-describedby="button-addon2"
+      (keydown)="searchingData()"
+    >
+    <div class="input-group-append">
+      <button type="button" (click)="searchingData()" class="pl-5 border-radius btn btn-default search-button" id="button-addon2">
+        <img class="search-icon" src="assets/icons/search.svg">
+      </button>
+    </div>
+  </div>
+  <div class="search-shift w-100 d-flex flex-wrap justify-content-between">
+    <div class="search-item shadow-sm" (click)="filterItem('salon')">
+      <img src="assets/icons/living-room.svg">
+      <span>Salon</span>
+    </div>
+    <div class="search-item shadow-sm" (click)="filterItem('kuchnia')">
+      <img src="assets/icons/kitchen.svg">
+      <span>Kuchnia</span>
+    </div>
+    <div class="search-item shadow-sm" (click)="filterItem('łazienka')">
+      <img src="assets/icons/bathtub.svg">
+      <span>Łazienka</span>
+    </div>
+    <div class="search-item shadow-sm" (click)="filterItem('sypialnia')">
+      <img src="assets/icons/bed.svg">
+      <span>Sypialnia</span>
+    </div>
+    <div class="search-item shadow-sm" (click)="filterItem('dodatki')">
+      <img src="assets/icons/greek-vase.svg">
+      <span>Dodatki</span>
+    </div>
+  </div>
+</div>
+
